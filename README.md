@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Create the database using docker:
 
-Things you may want to cover:
+```docker run --name nfl-rushing_db -e POSTGRES_USER=nfl-rushing -e POSTGRES_DB=nfl-rushing -e POSTGRES_PASSWORD='nfl-rushing!23' -d -p 5450:5432 postgres```
 
-* Ruby version
+### Run migrations
+```rake db:migrate:with_data```
 
-* System dependencies
+### Starts the application 
+```rails s -p 3001```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Run tests
+```rspec```
